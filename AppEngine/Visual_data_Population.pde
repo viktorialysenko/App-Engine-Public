@@ -147,4 +147,18 @@ float pauseStartDrawY =appHeight *1/3;
  poweredByHeight=appHeight*1/10;
  poweredByX=appWidth-poweredByWidth;
  poweredByY=appHeight-poweredByHeight;
+ //
+ progressBarX1 = pauseStartDrawX - appWidth/4;
+ progressBarY1 = pauseStartDrawY- pauseHeight*5/4;
+ progressBarWidth = appWidth/2;
+ progressBarHeight =pauseWidth/18;
+ //
+ progressBarX2=progressBarX1+progressBarWidth;
+ progressBarY2=progressBarY1+progressBarHeight;
+ //
+ currentTimeStringWidth=progressBarWidth/8;
+ currentTimeStringHeight=pauseHeight*1/4;
+ currentTimeStringX=progressBarX1-progressBarWidth/8;
+ currentTimeStringY= progressBarY1-currentTimeStringHeight/2;
+ 
 }//End SetupPopuation

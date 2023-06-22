@@ -11,11 +11,21 @@ void setupMusic() {
   songs[3] = minim.loadFile (path+nutcracker);
   songs[4] = minim.loadFile (path + vast_and_blue);
   //
+  
+   
 }//End SetupMusic
 
 void drawMusic() {
   print("Current Song Position:", songs[currentSong].position() );
   println("\tEnd of Song:", songs[currentSong].length() );
+  if (songs[currentSong].position() >= songs[currentSong].length()) {
+    if (currentSong == 4) {
+       currentSong = 0;
+     } else {
+       currentSong++;
+     }
+     songs[currentSong].play();
+  }
 }//End drawMusic
 
 void playPause() {
@@ -29,17 +39,15 @@ void playPause() {
 
 void nextSong() {
   if (  songs[currentSong].isPlaying()) {
-    songs[currentSong].pause();
-    songs[currentSong].rewind();
-    currentSong++;
-    songs[currentSong].play();
-  }
-  if (currentSong == 4) {
-    songs[currentSong].pause();
-    songs[currentSong].rewind();
-    currentSong = 0;
-    songs[currentSong].play();
-  }
+   songs[currentSong].pause();
+     songs[currentSong].rewind();
+     if (currentSong == 4) {
+       currentSong = 0;
+     } else {
+       currentSong++;
+     }
+     songs[currentSong].play();
+}
 }
 
 void fastForward() {
@@ -54,24 +62,26 @@ void fastReverse() {
 final int endOfSong2 = songs[currentSong].length();
  final int endOfSong = songs[currentSong].position();
  if(endOfSong == endOfSong2){
- songs[currentSong].loop(2);
- songs[currentSong].play();
+     songs[currentSong].rewind();
+ songs[currentSong].loop();
+  if ( songs[currentSong].isPlaying() ) {
+  } else {
+    songs[currentSong].position();
+    songs[currentSong].play();
+  }
  }
- }
+ }//End LoopButton
 
 void previousSong() {
   if (  songs[currentSong].isPlaying()) {
+    songs[currentSong].pause();
+      songs[currentSong].rewind();
     if (currentSong == 0) {
-      songs[currentSong].pause();
-      songs[currentSong].rewind();
       currentSong = 4;
-      songs[currentSong].play();
     } else {
-      songs[currentSong].pause();
-      songs[currentSong].rewind();
       currentSong--;
-      songs[currentSong].play();
     }
+    songs[currentSong].play();
   }
 }//End PreviousSong
 void mute() {

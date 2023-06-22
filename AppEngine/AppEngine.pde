@@ -21,6 +21,8 @@ float loop2X1, loop2Y1, loop2X2, loop2Y2, loop2X3, loop2Y3;
 float line1X1, line1Y1, line1X2, line1Y2, line2X1, line2Y1, line2X2, line2Y2;
 float rectLX,rectLY, rectLWidth, rectLHeight;
 float rectMX,rectMY, rectMWidth, rectMHeight;
+float progressBarX1, progressBarY1, progressBarWidth,progressBarHeight, progressBarX2, progressBarY2;
+float currentTimeStringX,currentTimeStringY, currentTimeStringWidth, currentTimeStringHeight;
 //
 float rectX,rectY, rectWidth, rectHeight;
 float rectNX,rectNY, rectFX,rectFY, rectPX,rectPY, rectRX,rectRY;
@@ -65,10 +67,13 @@ void draw() {
   // rect(rectLX,rectLY, rectLWidth, rectLHeight);
   //rect(rectMX,rectMY, rectMWidth, rectMHeight);
  //////
-
   fill(grey);
+  noStroke();
   drawMusicButtons() ;
     drawMusic();
+   
+    progressBarDraw();
+    //////
       textAlign(CENTER, CENTER); 
   textFont(lucida, 20);
   fill(#000000);

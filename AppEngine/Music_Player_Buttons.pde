@@ -3,7 +3,7 @@ void drawMusicButtons() {
  if ( mouseX>=rectX && mouseX<=rectX+rectWidth && mouseY>=rectY && mouseY<=rectY+rectHeight )
   {
     println("Hovering Over Stop Button");
-    fill(#1C481E);  
+    fill(#A681CB);  
   } else
   {
     println(""); 
@@ -26,7 +26,7 @@ void drawMusicButtons() {
    if ( mouseX>=rectNX && mouseX<=rectNX+rectNWidth && mouseY>=rectNY && mouseY<=rectNY+rectHeight )
   {
     println("Hovering Over Next Button");
-   fill(#1C481E);
+   fill(#A681CB);
   } else
   {
     println("");
@@ -38,7 +38,7 @@ void drawMusicButtons() {
    if ( mouseX>=rectPX && mouseX<=rectPX+rectNWidth && mouseY>=rectPY && mouseY<=rectPY+rectHeight )
   {
     println("Hovering Over Back Button");
-   fill(#1C481E);
+   fill(#A681CB);
   } else
   {
     println("");
@@ -50,7 +50,7 @@ void drawMusicButtons() {
   if ( mouseX>=rectFX && mouseX<=rectFX+rectFWidth && mouseY>=rectFY && mouseY<=rectFY+rectHeight )
   {
     println("Hovering Over Forward/Rewind Button");
-   fill(#1C481E);
+   fill(#A681CB);
   } else
   {
     println("");
@@ -62,7 +62,7 @@ void drawMusicButtons() {
    if ( mouseX>=rectRX && mouseX<=rectRX+rectFWidth && mouseY>=rectRY && mouseY<=rectRY+rectHeight )
   {
     println("Hovering Over Reverse Button");
-   fill(#1C481E);
+   fill(#A681CB);
   } else
   {
     println("");
@@ -78,34 +78,37 @@ void drawMusicButtons() {
   strokeWeight(1);
    if ( mouseX>=rectLX && mouseX<=rectLX+rectLWidth && mouseY>=rectLY && mouseY<=rectLY+rectLHeight )
  {
-     fill(#1C481E);
-  stroke(#1C481E);
+     fill(#A681CB);
+  stroke(#A681CB);
     println("Hovering Over Loop Button");
     } else {
        fill(grey);
     }
     if (loopIsPressed==true){
-      fill(#1C481E);
-        stroke(#1C481E);
+      fill(#A681CB);
+        stroke(#A681CB);
   }else{
-  fill(grey);
+    fill(grey);
 }
    ellipse(loopX, loopY, loopWidth, loopHeight);
    fill(1);
    triangle(loop1X1, loop1Y1, loop1X2, loop1Y2, loop1X3, loop1Y3);
   triangle(loop2X1, loop2Y1, loop2X2, loop2Y2, loop2X3, loop2Y3);
   fill(1);
+   stroke(#000000);
     if ( mouseX>=rectMX && mouseX<=rectMX+rectMWidth && mouseY>=rectMY && mouseY<=rectMY+rectMHeight )
   {
     println("Hovering Over Mute Button");
-    fill(#1C481E);  
-      stroke(#1C481E);
+    fill(#A681CB);  
+      stroke(#A681CB);
   } else
   { }
     rect( muteRectX1, muteRectY1,muteRectWidth, muteRectHeight );
   triangle(muteTriangleX1, muteTriangleY1, muteTriangleX2, muteTriangleY2, muteTriangleX3, muteTriangleY3);
-   if( muteIsPressed == true  ){muteButtonDrawing();}
-
+   if( muteIsPressed == true  ){muteButtonDrawing();
+ }
+ fill(#000000);
+ stroke(#000000);
  }//End drawMusicButtons SupProgram
  
  void muteButtonDrawing( ){
@@ -113,5 +116,6 @@ void drawMusicButtons() {
          line(lineX1,lineY1, lineX2,LineY2);
     line(line3X1,line3Y1, line3X2,Line3Y2);
 strokeWeight(1);
+
 //reset();
  }//end
